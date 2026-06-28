@@ -44,179 +44,37 @@ export default function Header() {
             {/* Desktop Navigation */}
             <nav className="main-nav" aria-label="Primary Navigation">
               <ul className="nav-menu">
-                {/* Home Mega Menu*/}
-                <li className="has-sub mega-menu">
-                  <Link href="/">
-                    Home <i className="fa-solid fa-chevron-down"></i>
-                  </Link>
-                  <ul className="sub-menu">
-                    <li className="mega-col">
-                      <div className="previw-box">
-                        <img src="/images/menu-home-01.png" alt="mega menu image" className="img-fluid" />
-                        <div className="btn">
-                          <Link href="/" className="ta-button-01">
-                            Preview Demo
-                            <span className="button__icon-wrapper">
-                              <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg" width="10">
-                                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
-                              </svg>
-                              <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg button__icon-svg--copy">
-                                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
-                              </svg>
-                            </span>
-                          </Link>
-                        </div>
-                      </div>
-                      <span className="text-center">Home V1</span>
-                    </li>
-                    <li className="mega-col">
-                      <div className="previw-box">
-                        <img src="/images/menu-home-02.png" alt="mega menu image" className="img-fluid" />
-                        <div className="btn">
-                          <Link href="/" className="ta-button-01">
-                            Preview Demo
-                            <span className="button__icon-wrapper">
-                              <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg" width="10">
-                                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
-                              </svg>
-                              <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg button__icon-svg--copy">
-                                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
-                              </svg>
-                            </span>
-                          </Link>
-                        </div>
-                      </div>
-                      <span className="text-center">Home V2</span>
-                    </li>
-                    <li className="mega-col">
-                      <div className="previw-box">
-                        <img src="/images/menu-home-03.png" alt="mega menu image" className="img-fluid" />
-                        <div className="btn">
-                          <Link href="/" className="ta-button-01">
-                            Preview Demo
-                            <span className="button__icon-wrapper">
-                              <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg" width="10">
-                                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
-                              </svg>
-                              <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg button__icon-svg--copy">
-                                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
-                              </svg>
-                            </span>
-                          </Link>
-                        </div>
-                      </div>
-                      <span className="text-center">Home V3</span>
-                    </li>
-                    <li className="mega-col">
-                      <div className="previw-box">
-                        <img src="/images/coming-soon.png" alt="mega menu image" className="img-fluid" />
-                      </div>
-                      <span className="text-center">Home V4</span>
-                    </li>
-                  </ul>
+                <li>
+                  <Link href="/">Home</Link>
                 </li>
-
                 <li>
                   <Link href="/about">About</Link>
                 </li>
-
-                <li className="has-sub">
-                  <a href="#">Pages <i className="fa-solid fa-chevron-down"></i></a>
-                  <ul className="sub-menu">
-                    <li>
-                      <Link href="/appointment">
-                        <span>Appointment</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <span>Pricing</span>
-                      </Link>
-                    </li>
-                    <li className="has-sub">
-                      <Link href="/team">
-                        <span>Team</span>
-                        <i className="fa-solid fa-chevron-right"></i>
-                      </Link>
-                      <ul className="sub-menu">
-                        <li>
-                          <Link href="/team-single">
-                            <span>Team Details</span>
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <span>FAQ&apos;S</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/contact">
-                        <span>Contact</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/not-found-test">
-                        <span>404/Error Page</span>
-                      </Link>
-                    </li>
-                  </ul>
+                <li>
+                  <Link href="/service">Service</Link>
                 </li>
-
                 <li className="has-sub">
-                  <Link href="/service">
-                    Service <i className="fa-solid fa-chevron-down"></i>
+                  <Link href="/team">
+                    Team <i className="fa-solid fa-chevron-down"></i>
                   </Link>
                   <ul className="sub-menu">
                     <li>
-                      <Link href="/service">
-                        <span>Service</span>
+                      <Link href="/team">
+                        <span>Team List</span>
                       </Link>
                     </li>
                     <li>
-                      <Link href="/service">
-                        <span>Service Details</span>
+                      <Link href="/team-single">
+                        <span>Team Details</span>
                       </Link>
                     </li>
                   </ul>
                 </li>
-
-                <li className="has-sub">
-                  <a href="#">Project <i className="fa-solid fa-chevron-down"></i></a>
-                  <ul className="sub-menu">
-                    <li>
-                      <a href="#">
-                        <span>Project</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <span>Project Details</span>
-                      </a>
-                    </li>
-                  </ul>
+                <li>
+                  <Link href="/appointment">Appointment</Link>
                 </li>
-
-                <li className="has-sub">
-                  <a href="#">Blog <i className="fa-solid fa-chevron-down"></i></a>
-                  <ul className="sub-menu">
-                    <li>
-                      <a href="#">
-                        <span>Blog Standard</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <span>Blog Grid</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <span>Blog Details</span>
-                      </a>
-                    </li>
-                  </ul>
+                <li>
+                  <Link href="/contact">Contact</Link>
                 </li>
               </ul>
             </nav>
@@ -355,169 +213,37 @@ export default function Header() {
             <li>
               <div className="mob-row">
                 <Link href="/">Home</Link>
-                <button className="mob-toggle" aria-expanded="false" aria-label="Toggle Products submenu">
-                  <i className="fa-solid fa-chevron-down"></i>
-                </button>
               </div>
-              <ul className="sub-menu">
-                <li>
-                  <div className="mob-row">
-                    <Link href="/"> Home V1 </Link>
-                    <button className="mob-toggle" aria-expanded="false" aria-label="Toggle Plugins">
-                      <i className="fa-solid fa-chevron-down"></i>
-                    </button>
-                  </div>
-                  <ul className="sub-menu">
-                    <li className="mega-col">
-                      <div className="previw-box">
-                        <img src="/images/menu-home-01.png" alt="mega menu image" className="img-fluid" />
-                        <div className="btn">
-                          <Link href="/" className="ta-button-01">
-                            Preview Demo
-                            <span className="button__icon-wrapper">
-                              <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg" width="10">
-                                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
-                              </svg>
-                              <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg button__icon-svg--copy">
-                                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
-                              </svg>
-                            </span>
-                          </Link>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <div className="mob-row">
-                    <Link href="/">Home V2</Link>
-                    <button className="mob-toggle" aria-expanded="false" aria-label="Toggle Plugins">
-                      <i className="fa-solid fa-chevron-down"></i>
-                    </button>
-                  </div>
-                  <ul className="sub-menu">
-                    <li className="mega-col">
-                      <div className="previw-box">
-                        <img src="/images/menu-home-02.png" alt="mega menu image" className="img-fluid" />
-                        <div className="btn">
-                          <Link href="/" className="ta-button-01">
-                            Preview Demo
-                            <span className="button__icon-wrapper">
-                              <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg" width="10">
-                                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
-                              </svg>
-                              <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg button__icon-svg--copy">
-                                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
-                              </svg>
-                            </span>
-                          </Link>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <div className="mob-row">
-                    <Link href="/">Home V3</Link>
-                    <button className="mob-toggle" aria-expanded="false" aria-label="Toggle Plugins">
-                      <i className="fa-solid fa-chevron-down"></i>
-                    </button>
-                  </div>
-                  <ul className="sub-menu">
-                    <li className="mega-col">
-                      <div className="previw-box">
-                        <img src="/images/menu-home-03.png" alt="mega menu image" className="img-fluid" />
-                        <div className="btn">
-                          <Link href="/" className="ta-button-01">
-                            Preview Demo
-                            <span className="button__icon-wrapper">
-                              <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg" width="10">
-                                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
-                              </svg>
-                              <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg button__icon-svg--copy">
-                                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
-                              </svg>
-                            </span>
-                          </Link>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <div className="mob-row"><Link href="/about">About</Link></div>
             </li>
 
             <li>
               <div className="mob-row">
-                <a href="#">Pages</a>
-                <button className="mob-toggle" aria-expanded="false" aria-label="Toggle About submenu">
-                  <i className="fa-solid fa-chevron-down"></i>
-                </button>
+                <Link href="/about">About</Link>
               </div>
-              <ul className="sub-menu">
-                <li>
-                  <div className="mob-row">
-                    <Link href="/team">Team</Link>
-                    <button className="mob-toggle" aria-expanded="false" aria-label="Toggle Web Design submenu">
-                      <i className="fa-solid fa-chevron-down"></i>
-                    </button>
-                  </div>
-                  <ul className="sub-menu">
-                    <li>
-                      <div className="mob-row">
-                        <Link href="/team-single">Team Details</Link>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <div className="mob-row">
-                    <Link href="/appointment">Appointment</Link>
-                  </div>
-                </li>
-                <li>
-                  <div className="mob-row">
-                    <Link href="#">Pricing</Link>
-                  </div>
-                </li>
-                <li>
-                  <div className="mob-row">
-                    <Link href="#">FAQ&apos;S</Link>
-                  </div>
-                </li>
-                <li>
-                  <div className="mob-row">
-                    <Link href="/contact">Contact</Link>
-                  </div>
-                </li>
-                <li>
-                  <div className="mob-row">
-                    <Link href="/not-found-test">404/Error Page</Link>
-                  </div>
-                </li>
-              </ul>
             </li>
 
             <li>
               <div className="mob-row">
                 <Link href="/service">Service</Link>
-                <button className="mob-toggle" aria-expanded="false" aria-label="Toggle About submenu">
+              </div>
+            </li>
+
+            <li>
+              <div className="mob-row">
+                <Link href="/team">Team</Link>
+                <button className="mob-toggle" aria-expanded="false" aria-label="Toggle Team submenu">
                   <i className="fa-solid fa-chevron-down"></i>
                 </button>
               </div>
               <ul className="sub-menu">
                 <li>
                   <div className="mob-row">
-                    <Link href="/service">Service</Link>
+                    <Link href="/team">Team List</Link>
                   </div>
                 </li>
                 <li>
                   <div className="mob-row">
-                    <Link href="/service">Service Details</Link>
+                    <Link href="/team-single">Team Details</Link>
                   </div>
                 </li>
               </ul>
@@ -525,49 +251,14 @@ export default function Header() {
 
             <li>
               <div className="mob-row">
-                <a href="#">Project</a>
-                <button className="mob-toggle" aria-expanded="false" aria-label="Toggle About submenu">
-                  <i className="fa-solid fa-chevron-down"></i>
-                </button>
+                <Link href="/appointment">Appointment</Link>
               </div>
-              <ul className="sub-menu">
-                <li>
-                  <div className="mob-row">
-                    <a href="#">Project</a>
-                  </div>
-                </li>
-                <li>
-                  <div className="mob-row">
-                    <a href="#">Project Details</a>
-                  </div>
-                </li>
-              </ul>
             </li>
 
             <li>
               <div className="mob-row">
-                <a href="#">Blog</a>
-                <button className="mob-toggle" aria-expanded="false" aria-label="Toggle About submenu">
-                  <i className="fa-solid fa-chevron-down"></i>
-                </button>
+                <Link href="/contact">Contact</Link>
               </div>
-              <ul className="sub-menu">
-                <li>
-                  <div className="mob-row">
-                    <a href="#">Blog Grid</a>
-                  </div>
-                </li>
-                <li>
-                  <div className="mob-row">
-                    <a href="#">Blog Standard</a>
-                  </div>
-                </li>
-                <li>
-                  <div className="mob-row">
-                    <a href="#">Blog Details</a>
-                  </div>
-                </li>
-              </ul>
             </li>
           </ul>
         </div>

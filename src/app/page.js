@@ -1,10 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TabComponent from "@/components/TabComponent";
 import FaqAccordion from "@/components/FaqAccordion";
 import Link from "next/link";
+import { supabase } from "@/lib/supabase";
 
 const facilitiesTabs = [
   {
@@ -63,6 +65,54 @@ const faqItems = [
 ];
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    date: "2026-05-02",
+    service: "service-one",
+    doctor: "Doctor",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      name: formData.name.toUpperCase(),
+      email: formData.email.toUpperCase(),
+      phone: formData.phone.toUpperCase(),
+      appointment_date: formData.date,
+      service: formData.service.toUpperCase(),
+      doctor: formData.doctor.toUpperCase(),
+      message: formData.message.toUpperCase(),
+    };
+
+    const { error } = await supabase
+      .from("online_appointment")
+      .insert([payload]);
+
+    if (error) {
+      console.error("Error saving appointment:", error);
+      alert("There was an error booking your appointment.");
+    } else {
+      alert("Appointment booked successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        date: "2026-05-02",
+        service: "service-one",
+        doctor: "Doctor",
+        message: "",
+      });
+    }
+  };
+
   return (
     <>
       <Header />
@@ -260,11 +310,9 @@ export default function Home() {
                         </ul>
                     </li>
 
-
                     <li>
                         <div className="mob-row"><a href="/about">About</a></div>
                     </li>
-
 
                     <li>
                         <div className="mob-row">
@@ -325,7 +373,6 @@ export default function Home() {
                             </button>
                         </div>
                         <ul className="sub-menu">
-
                             <li>
                                 <div className="mob-row">
                                     <a href="/service">Service</a>
@@ -347,7 +394,6 @@ export default function Home() {
                             </button>
                         </div>
                         <ul className="sub-menu">
-
                             <li>
                                 <div className="mob-row">
                                     <a href="#">Project</a>
@@ -1055,7 +1101,6 @@ export default function Home() {
                                             <path d="M21.25 1.25L1.25 21.25" stroke="#001837" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                             <path d="M3.25 1.25H21.25V19.25" stroke="#001837" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                         </svg>
-
                                     </div>
                                 </li>
                                 <li className="active" data-tab="a2">
@@ -1068,7 +1113,6 @@ export default function Home() {
                                             <path d="M21.25 1.25L1.25 21.25" stroke="#001837" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                             <path d="M3.25 1.25H21.25V19.25" stroke="#001837" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                         </svg>
-
                                     </div>
                                 </li>
                                 <li data-tab="a3">
@@ -1093,7 +1137,6 @@ export default function Home() {
                                             <path d="M21.25 1.25L1.25 21.25" stroke="#001837" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                             <path d="M3.25 1.25H21.25V19.25" stroke="#001837" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"></path>
                                         </svg>
-
                                     </div>
                                 </li>
                             </ul>
@@ -1266,7 +1309,7 @@ export default function Home() {
                 <div className="ta-process-one-wrap">
                     <div className="row gy-30 align-items-center justify-content-center mb-50">
                         <div className="col-12">
-                            <div className="center-sub-main-header ta-process-one">
+                            <div className="center-sub-main-header " >
                                 <p className="sub-title mb-20 text-white" data-aos="fade-up" data-aos-duration="600">working
                                     process</p>
                                 <h2 className="header-xl txt-anim-2 text-white" data-aos="fade-up" data-aos-duration="600">
@@ -1329,33 +1372,32 @@ export default function Home() {
             </div>
         </section>
 
-        {/* contact */}
+        {/* contact / appointment submission */}
         <section className="ta-contact-one pta-120">
             <div className="container">
                 <div className="ta-contact-one-wrap">
                     <div className="row gy-30">
                         <div className="col-xl-6">
-                            <form className="contact-form-one" action="#">
+                            <form className="contact-form-one" onSubmit={handleSubmit}>
                                 <div className="row">
                                     <h3 className="header-md mb-20">Book Your Appointment Today!</h3>
                                     <p className="mb-30">Your health is your greatest asset don’t wait to take care of it.
-                                        Whether you're
-                                        coming in
-                                        for a routine check up a specialist consultation or ongoing treatment</p>
+                                        Whether you're coming in for a routine check up a specialist consultation or ongoing treatment</p>
+                                    
                                     <div className="col-md-6 mb-20">
-                                        <input type="text" placeholder="Your Name" />
+                                        <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" required />
                                     </div>
                                     <div className="col-md-6 mb-20">
-                                        <input type="email" placeholder="Your Email" />
+                                        <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Your Email" required />
                                     </div>
                                     <div className="col-md-6 mb-20">
-                                        <input type="text" placeholder="Your Phone" />
+                                        <input type="text" name="phone" value={formData.phone} onChange={handleChange} placeholder="Your Phone" required />
                                     </div>
                                     <div className="col-md-6 mb-20">
-                                        <input type="date" defaultValue="2026-05-02" />
+                                        <input type="date" name="date" value={formData.date} onChange={handleChange} required />
                                     </div>
                                     <div className="col-md-6 mb-20">
-                                        <select>
+                                        <select name="service" value={formData.service} onChange={handleChange}>
                                             <option value="service-one">Service One</option>
                                             <option value="service-two">Service Two</option>
                                             <option value="service-three">Service Three</option>
@@ -1364,7 +1406,7 @@ export default function Home() {
                                         </select>
                                     </div>
                                     <div className="col-md-6 mb-20">
-                                        <select>
+                                        <select name="doctor" value={formData.doctor} onChange={handleChange}>
                                             <option value="Doctor">Doctor One</option>
                                             <option value="Doctor-two">Doctor Two</option>
                                             <option value="Doctor-three">Doctor Three</option>
@@ -1373,7 +1415,7 @@ export default function Home() {
                                         </select>
                                     </div>
                                     <div className="col-12 mb-30">
-                                        <textarea placeholder="Your Message"></textarea>
+                                        <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Your Message"></textarea>
                                     </div>
                                     <div className="col-12">
                                         <button type="submit" className="ta-button-01">
@@ -1394,11 +1436,8 @@ export default function Home() {
                         </div>
                         <div className="col-xl-6">
                             <div className="accordion-one">
-                                <p className="sub-title aos-init" data-aos="fade-up" data-aos-duration="600">Frequently
-                                    Asked Questions</p>
-                                <h2 className="header-xl txt-anim-2 mb-20" data-aos="fade-up" data-aos-duration="600">have
-                                    all question cleared up
-                                    something with Cardia</h2>
+                                <p className="sub-title aos-init" data-aos="fade-up" data-aos-duration="600">Frequently Asked Questions</p>
+                                <h2 className="header-xl txt-anim-2 mb-20" data-aos="fade-up" data-aos-duration="600">have all question cleared up something with Cardia</h2>
 
                                 <FaqAccordion items={faqItems} />
                             </div>
@@ -1476,10 +1515,8 @@ export default function Home() {
                     <div className="row mb-50 align-items-center justify-content-center">
                         <div className="col-12">
                             <div className="center-sub-main-header">
-                                <p className="sub-title aos-init mb-20" data-aos="fade-up" data-aos-duration="600">news &
-                                    blog</p>
-                                <h2 className="header-xl txt-anim-2" data-aos="fade-up" data-aos-duration="600">Explore The
-                                    Latest News & Blog</h2>
+                                <p className="sub-title aos-init mb-20" data-aos="fade-up" data-aos-duration="600">news & blog</p>
+                                <h2 className="header-xl txt-anim-2" data-aos="fade-up" data-aos-duration="600">Explore The Latest News & Blog</h2>
                             </div>
                         </div>
                     </div>
@@ -1497,7 +1534,7 @@ export default function Home() {
                                     <div className="news-top-meta">
                                         <div className="post_meta post-author">
                                             <div className="author-thumb">
-                                                <i className="post-author-icon far fa-user" aria-hidden="true"></i>
+                                                <i className="far fa-user" aria-hidden="true"></i>
                                                 <span className="note">By</span>
                                                 <a href="#" className="name"> admin </a>
                                             </div>
@@ -1509,11 +1546,9 @@ export default function Home() {
                                             </span>
                                         </div>
                                     </div>
-                                    <h2 className="header-md bg-line-underline"><a href="#">Women and
-                                            Heart Disease Symptoms You Shouldn’t Ignore</a></h2>
+                                    <h2 className="header-md bg-line-underline"><a href="#">Women and Heart Disease Symptoms You Shouldn’t Ignore</a></h2>
                                     <div className="post-excerpt">
-                                        <p>It depends on your age risk factors and medical history for those
-                                            risk or over annual check up may be advised Your cardiologist</p>
+                                        <p>It depends on your age risk factors and medical history for those risk or over annual check up may be advised Your cardiologist</p>
                                     </div>
                                     <div className="read-more-button">
                                         <a href="#" className="bg-line-underline">Read More <i className="fa-sharp-duotone fa-solid fa-arrow-up-left"></i></a>
@@ -1534,7 +1569,7 @@ export default function Home() {
                                     <div className="news-top-meta">
                                         <div className="post_meta post-author">
                                             <div className="author-thumb">
-                                                <i className="post-author-icon far fa-user" aria-hidden="true"></i>
+                                                <i className="far fa-user" aria-hidden="true"></i>
                                                 <span className="note">By</span>
                                                 <a href="#" className="name"> admin </a>
                                             </div>
@@ -1546,11 +1581,9 @@ export default function Home() {
                                             </span>
                                         </div>
                                     </div>
-                                    <h2 className="header-md bg-line-underline"><a href="#">Heart Attack
-                                            Symptoms What You Should Never Ignore</a></h2>
+                                    <h2 className="header-md bg-line-underline"><a href="#">Heart Attack Symptoms What You Should Never Ignore</a></h2>
                                     <div className="post-excerpt">
-                                        <p>It depends on your age risk factors and medical history for those risk or
-                                            over annual check up may be advised Your cardiologist</p>
+                                        <p>It depends on your age risk factors and medical history for those risk or over annual check up may be advised Your cardiologist</p>
                                     </div>
                                     <div className="read-more-button">
                                         <a href="#" className="bg-line-underline">Read More <i className="fa-sharp-duotone fa-solid fa-arrow-up-left"></i></a>
@@ -1571,7 +1604,7 @@ export default function Home() {
                                     <div className="news-top-meta">
                                         <div className="post_meta post-author">
                                             <div className="author-thumb">
-                                                <i className="post-author-icon far fa-user" aria-hidden="true"></i>
+                                                <i className="far fa-user" aria-hidden="true"></i>
                                                 <span className="note">By</span>
                                                 <a href="#" className="name"> admin </a>
                                             </div>
@@ -1583,11 +1616,9 @@ export default function Home() {
                                             </span>
                                         </div>
                                     </div>
-                                    <h2 className="header-md bg-line-underline"><a href="#">Cholesterol Myths
-                                            and Facts What You Really Need to Know</a></h2>
+                                    <h2 className="header-md bg-line-underline"><a href="#">Cholesterol Myths and Facts What You Really Need to Know</a></h2>
                                     <div className="post-excerpt">
-                                        <p>The goal of cardiology is not only treat heart disease but also promote long
-                                            term heart health through preventive care patient education</p>
+                                        <p>The goal of cardiology is not only treat heart disease but also promote long term heart health through preventive care patient education</p>
                                     </div>
                                     <div className="read-more-button">
                                         <a href="#" className="bg-line-underline">Read More <i className="fa-sharp-duotone fa-solid fa-arrow-up-left"></i></a>

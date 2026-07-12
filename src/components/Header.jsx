@@ -53,22 +53,8 @@ export default function Header() {
                 <li>
                   <Link href="/service">Service</Link>
                 </li>
-                <li className="has-sub">
-                  <Link href="/team">
-                    Team <i className="fa-solid fa-chevron-down"></i>
-                  </Link>
-                  <ul className="sub-menu">
-                    <li>
-                      <Link href="/team">
-                        <span>Team List</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/team-single">
-                        <span>Team Details</span>
-                      </Link>
-                    </li>
-                  </ul>
+                <li>
+                  <Link href="/team">Doctors</Link>
                 </li>
                 <li>
                   <Link href="/appointment">Appointment</Link>
@@ -230,23 +216,8 @@ export default function Header() {
 
             <li>
               <div className="mob-row">
-                <Link href="/team">Team</Link>
-                <button className="mob-toggle" aria-expanded="false" aria-label="Toggle Team submenu">
-                  <i className="fa-solid fa-chevron-down"></i>
-                </button>
+                <Link href="/team">Doctors</Link>
               </div>
-              <ul className="sub-menu">
-                <li>
-                  <div className="mob-row">
-                    <Link href="/team">Team List</Link>
-                  </div>
-                </li>
-                <li>
-                  <div className="mob-row">
-                    <Link href="/team-single">Team Details</Link>
-                  </div>
-                </li>
-              </ul>
             </li>
 
             <li>

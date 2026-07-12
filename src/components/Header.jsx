@@ -57,9 +57,6 @@ export default function Header() {
                   <Link href="/team">Doctors</Link>
                 </li>
                 <li>
-                  <Link href="/directors">Directors</Link>
-                </li>
-                <li>
                   <Link href="/appointment">Appointment</Link>
                 </li>
                 <li>
@@ -216,12 +213,6 @@ export default function Header() {
             <li>
               <div className="mob-row">
                 <Link href="/team">Doctors</Link>
-              </div>
-            </li>
-
-            <li>
-              <div className="mob-row">
-                <Link href="/directors">Directors</Link>
               </div>
             </li>
 

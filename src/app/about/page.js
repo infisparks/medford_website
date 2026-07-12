@@ -63,7 +63,7 @@ export default function Page() {
                                 </div>
                                 <div className="text">
                                     <h4 className="header-sm">Location</h4>
-                                    <a href="#">123 Street, New York, USA</a>
+                                    <a href="#">Bluebells, Mumbra Bypass Road, Near Maaz Hotel, Kalsekar, Mumbra, Thane, Maharashtra 400612</a>
                                 </div>
                             </li>
                             <li>
@@ -72,7 +72,7 @@ export default function Page() {
                                 </div>
                                 <div className="text">
                                     <h4 className="header-sm">Phone</h4>
-                                    <a href="tel:+447820124453">+44 7820 124453</a>
+                                    <a href="tel:+919769000091">+91 97690 00091</a>
                                 </div>
                             </li>
                             <li>
@@ -81,7 +81,7 @@ export default function Page() {
                                 </div>
                                 <div className="text">
                                     <h4 className="header-sm">Email</h4>
-                                    <a href="mailto:cardia@gmail.com">cardia@gmail.com</a>
+                                    <a href="mailto:MedFordhospital@gmail.com">MedFordhospital@gmail.com</a>
                                 </div>
                             </li>
                         </ul>
@@ -89,7 +89,7 @@ export default function Page() {
                     <ul className="social-icon">
                         <li>Follow Us</li>
                         <li><a href="#"><i className="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i className="fa-brands fa-linkedin-in"></i></a></li>
+                        <li><a href="https://in.linkedin.com/company/medford-multi-specialty-hospital" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin-in"></i></a></li>
                         <li><a href="#"><i className="fa-brands fa-instagram"></i></a></li>
                         <li><a href="#"><i className="fa-brands fa-twitter"></i></a></li>
                     </ul>
@@ -339,71 +339,84 @@ export default function Page() {
         {/* breadcrumb */}
         <Breadcrumb title="Our About Us" pageName="About" />
 
-        {/* appointment */}
-        <section className="ta-appointment-page-one pta-120">
+        {/* About Medford Hospital Section */}
+        <section className="ta-about-section pta-120 pb-120" style={{ background: '#F5F6F8' }}>
             <div className="container">
-                <div className="ta-appointment-page-one-wrap">
-                    <div className="row gy-30">
-                        <div className="col-xl-6">
-                            <form className="contact-page-one" action="#" data-aos="fade-up" data-aos-duration="400">
-                                <div className="row">
-                                    <div className="col-md-6 mb-30">
-                                        <input type="text" placeholder="Your Name" />
-                                    </div>
-                                    <div className="col-md-6 mb-30">
-                                        <input type="email" placeholder="Your Email" />
-                                    </div>
-                                    <div className="col-md-6 mb-30">
-                                        <input type="text" placeholder="Your Phone" />
-                                    </div>
-                                    <div className="col-md-6 mb-30">
-                                        <input type="date" defaultValue="2026-05-02" />
-                                    </div>
-                                    <div className="col-md-6 mb-30">
-                                        <select>
-                                            <option value="service-one">Service One</option>
-                                            <option value="service-two">Service Two</option>
-                                            <option value="service-three">Service Three</option>
-                                            <option value="service-four">Service Four</option>
-                                            <option value="service-six">Service Five</option>
-                                        </select>
-                                    </div>
-                                    <div className="col-md-6 mb-30">
-                                        <select>
-                                            <option value="Doctor">Doctor One</option>
-                                            <option value="Doctor-two">Doctor Two</option>
-                                            <option value="Doctor-three">Doctor Three</option>
-                                            <option value="Doctor-four">Doctor Four</option>
-                                            <option value="Doctor-six">Doctor Five</option>
-                                        </select>
-                                    </div>
-                                    <div className="col-12 mb-30">
-                                        <textarea placeholder="Your Message"></textarea>
-                                    </div>
-                                    <div className="col-12">
-                                        <button type="submit" className="ta-button-01">
-                                            Book Appointment
-                                            <span className="button__icon-wrapper">
-                                                <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg" width="10">
-                                                    <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
-                                                </svg>
+                <div className="ta-about-wrap" style={{ background: '#ffffff', borderRadius: '20px', padding: '50px 40px', border: '1px solid #E5E7EB', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' }}>
+                    <div className="row align-items-center gy-40">
+                        <div className="col-xl-7" data-aos="fade-right" data-aos-duration="600">
+                            <div className="about-content-box">
+                                <span className="sub-title mb-20" style={{ background: '#EEF2FF', color: '#4F46E5', fontSize: '12px', fontWeight: '700', padding: '6px 14px', borderRadius: '20px', display: 'inline-block', textTransform: 'uppercase' }}>About Medford Hospital</span>
+                                <h2 className="header-xl txt-anim-2 mb-25" style={{ color: '#111827', fontWeight: '800', fontSize: '32px' }}>Medford Multi-Speciality Hospital</h2>
+                                <p className="mb-20" style={{ color: '#4B5563', fontSize: '15px', lineHeight: '1.7' }}>
+                                    Located in Kalsekar, Mumbra, Thane, Medford Multi-Speciality Hospital is a premier healthcare institution dedicated to delivering high-quality, comprehensive medical treatments and round-the-clock emergency care to our community.
+                                </p>
+                                <p className="mb-30" style={{ color: '#4B5563', fontSize: '15px', lineHeight: '1.7' }}>
+                                    Our facility features a state-of-the-art Intensive Care Unit (ICCU) equipped with advanced ventilators, a minor operating theater, specialized pediatric wards, and fully-integrated pathology and pharmacy services operating 24 hours a day, 7 days a week.
+                                </p>
 
-                                                <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg button__icon-svg--copy">
-                                                    <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
-                                                </svg>
-                                            </span>
-                                        </button>
+                                <div className="row gy-20">
+                                    <div className="col-md-6">
+                                        <div className="feature-item-inline" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                            <i className="fa-solid fa-square-check" style={{ color: '#4F46E5', fontSize: '18px' }}></i>
+                                            <span style={{ color: '#111827', fontSize: '14px', fontWeight: '600' }}>24/7 Trauma & Emergency</span>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="feature-item-inline" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                            <i className="fa-solid fa-square-check" style={{ color: '#4F46E5', fontSize: '18px' }}></i>
+                                            <span style={{ color: '#111827', fontSize: '14px', fontWeight: '600' }}>In-House Pharmacy & Lab</span>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="feature-item-inline" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                            <i className="fa-solid fa-square-check" style={{ color: '#4F46E5', fontSize: '18px' }}></i>
+                                            <span style={{ color: '#111827', fontSize: '14px', fontWeight: '600' }}>Laparoscopic & Gen Surgery</span>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="feature-item-inline" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                            <i className="fa-solid fa-square-check" style={{ color: '#4F46E5', fontSize: '18px' }}></i>
+                                            <span style={{ color: '#111827', fontSize: '14px', fontWeight: '600' }}>Pediatrics & Gynaecology</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
-                        <div className="col-xl-6">
-                            <div className="ta-appointment-img" data-aos="fade-up" data-aos-duration="600">
-                                <img src="/images/appointment-page.png" className="img-fluid w-100" alt="appointment image" />
-                                <div className="play-icon">
-                                    <a className="ta-glightbox play-button-anime" href="https://www.youtube.com/watch?v=CHYX0TwfgFM">
-                                        <i className="fa-sharp fa-solid fa-play"></i>
-                                    </a>
+                        <div className="col-xl-5" data-aos="fade-left" data-aos-duration="600">
+                            <div className="about-stats-card" style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: '16px', padding: '35px' }}>
+                                <h3 className="header-md mb-25" style={{ fontSize: '18px', fontWeight: '700', color: '#111827' }}>Why Choose Medford?</h3>
+                                
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                                    <div className="stat-entry" style={{ display: 'flex', gap: '15px' }}>
+                                        <div className="stat-icon-wrap" style={{ background: '#EEF2FF', width: '45px', height: '45px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                            <i className="fa-solid fa-user-doctor" style={{ color: '#4F46E5' }}></i>
+                                        </div>
+                                        <div>
+                                            <h4 style={{ fontSize: '15px', fontWeight: '700', color: '#111827', margin: '0 0 4px 0' }}>Specialist Doctors</h4>
+                                            <p style={{ color: '#6B7280', fontSize: '13px', margin: 0 }}>A dedicated team of qualified practitioners covering over 15 medical disciplines.</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="stat-entry" style={{ display: 'flex', gap: '15px' }}>
+                                        <div className="stat-icon-wrap" style={{ background: '#EEF2FF', width: '45px', height: '45px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                            <i className="fa-solid fa-kit-medical" style={{ color: '#4F46E5' }}></i>
+                                        </div>
+                                        <div>
+                                            <h4 style={{ fontSize: '15px', fontWeight: '700', color: '#111827', margin: '0 0 4px 0' }}>Advanced ICCU</h4>
+                                            <p style={{ color: '#6B7280', fontSize: '13px', margin: 0 }}>Equipped with modern ventilator systems and patient monitors for critical care support.</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="stat-entry" style={{ display: 'flex', gap: '15px' }}>
+                                        <div className="stat-icon-wrap" style={{ background: '#EEF2FF', width: '45px', height: '45px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                            <i className="fa-solid fa-clock" style={{ color: '#4F46E5' }}></i>
+                                        </div>
+                                        <div>
+                                            <h4 style={{ fontSize: '15px', fontWeight: '700', color: '#111827', margin: '0 0 4px 0' }}>24/7 Open Services</h4>
+                                            <p style={{ color: '#6B7280', fontSize: '13px', margin: 0 }}>Emergency desk, pharmacy and basic diagnostics are fully functional all day and night.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

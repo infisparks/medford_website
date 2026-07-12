@@ -63,7 +63,7 @@ export default function Page() {
                                 </div>
                                 <div className="text">
                                     <h4 className="header-sm">Location</h4>
-                                    <a href="#">123 Street, New York, USA</a>
+                                    <a href="#">Bluebells, Mumbra Bypass Road, Near Maaz Hotel, Kalsekar, Mumbra, Thane, Maharashtra 400612</a>
                                 </div>
                             </li>
                             <li>
@@ -72,7 +72,7 @@ export default function Page() {
                                 </div>
                                 <div className="text">
                                     <h4 className="header-sm">Phone</h4>
-                                    <a href="tel:+447820124453">+44 7820 124453</a>
+                                    <a href="tel:+919769000091">+91 97690 00091</a>
                                 </div>
                             </li>
                             <li>
@@ -81,7 +81,7 @@ export default function Page() {
                                 </div>
                                 <div className="text">
                                     <h4 className="header-sm">Email</h4>
-                                    <a href="mailto:cardia@gmail.com">cardia@gmail.com</a>
+                                    <a href="mailto:MedFordhospital@gmail.com">MedFordhospital@gmail.com</a>
                                 </div>
                             </li>
                         </ul>
@@ -89,7 +89,7 @@ export default function Page() {
                     <ul className="social-icon">
                         <li>Follow Us</li>
                         <li><a href="#"><i className="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i className="fa-brands fa-linkedin-in"></i></a></li>
+                        <li><a href="https://in.linkedin.com/company/medford-multi-specialty-hospital" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin-in"></i></a></li>
                         <li><a href="#"><i className="fa-brands fa-instagram"></i></a></li>
                         <li><a href="#"><i className="fa-brands fa-twitter"></i></a></li>
                     </ul>

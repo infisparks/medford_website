@@ -1,62 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
-import Link from "next/link";
-import { supabase } from "@/lib/supabase";
+import AppointmentForm from "@/components/AppointmentForm";
 
 export default function Page() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    date: "2026-05-02",
-    service: "service-one",
-    doctor: "Doctor",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // Enforce uppercase on all incoming records before saving
-    const payload = {
-      name: formData.name.toUpperCase(),
-      email: formData.email.toUpperCase(),
-      phone: formData.phone.toUpperCase(),
-      appointment_date: formData.date,
-      service: formData.service.toUpperCase(),
-      doctor: formData.doctor.toUpperCase(),
-      message: formData.message.toUpperCase(),
-    };
-
-    const { data, error } = await supabase
-      .from("online_appointment")
-      .insert([payload]);
-
-    if (error) {
-      console.error("Error saving appointment:", error);
-      alert("There was an error booking your appointment.");
-    } else {
-      alert("Appointment booked successfully!");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        date: "2026-05-02",
-        service: "service-one",
-        doctor: "Doctor",
-        message: "",
-      });
-    }
-  };
-
   return (
     <>
       <Header />
@@ -113,7 +62,7 @@ export default function Page() {
                   </div>
                   <div className="text">
                     <h4 className="header-sm">Location</h4>
-                    <a href="#">123 Street, New York, USA</a>
+                    <a href="#">Bluebells, Mumbra Bypass Road, Near Maaz Hotel, Kalsekar, Mumbra, Thane, Maharashtra 400612</a>
                   </div>
                 </li>
                 <li>
@@ -122,7 +71,7 @@ export default function Page() {
                   </div>
                   <div className="text">
                     <h4 className="header-sm">Phone</h4>
-                    <a href="tel:+447820124453">+44 7820 124453</a>
+                    <a href="tel:+919769000091">+91 97690 00091</a>
                   </div>
                 </li>
                 <li>
@@ -131,7 +80,7 @@ export default function Page() {
                   </div>
                   <div className="text">
                     <h4 className="header-sm">Email</h4>
-                    <a href="mailto:cardia@gmail.com">cardia@gmail.com</a>
+                    <a href="mailto:MedFordhospital@gmail.com">MedFordhospital@gmail.com</a>
                   </div>
                 </li>
               </ul>
@@ -139,7 +88,7 @@ export default function Page() {
             <ul className="social-icon">
               <li>Follow Us</li>
               <li><a href="#"><i className="fa-brands fa-facebook-f"></i></a></li>
-              <li><a href="#"><i className="fa-brands fa-linkedin-in"></i></a></li>
+              <li><a href="https://in.linkedin.com/company/medford-multi-specialty-hospital" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin-in"></i></a></li>
               <li><a href="#"><i className="fa-brands fa-instagram"></i></a></li>
               <li><a href="#"><i className="fa-brands fa-twitter"></i></a></li>
             </ul>
@@ -381,56 +330,9 @@ export default function Page() {
           <div className="ta-appointment-page-one-wrap">
             <div className="row gy-30">
               <div className="col-xl-6">
-                <form className="contact-page-one" onSubmit={handleSubmit} data-aos="fade-up" data-aos-duration="400">
-                  <div className="row">
-                    <div className="col-md-6 mb-30">
-                      <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" required />
-                    </div>
-                    <div className="col-md-6 mb-30">
-                      <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Your Email" required />
-                    </div>
-                    <div className="col-md-6 mb-30">
-                      <input type="text" name="phone" value={formData.phone} onChange={handleChange} placeholder="Your Phone" required />
-                    </div>
-                    <div className="col-md-6 mb-30">
-                      <input type="date" name="date" value={formData.date} onChange={handleChange} required />
-                    </div>
-                    <div className="col-md-6 mb-30">
-                      <select name="service" value={formData.service} onChange={handleChange}>
-                        <option value="service-one">Service One</option>
-                        <option value="service-two">Service Two</option>
-                        <option value="service-three">Service Three</option>
-                        <option value="service-four">Service Four</option>
-                        <option value="service-six">Service Five</option>
-                      </select>
-                    </div>
-                    <div className="col-md-6 mb-30">
-                      <select name="doctor" value={formData.doctor} onChange={handleChange}>
-                        <option value="Doctor">Doctor One</option>
-                        <option value="Doctor-two">Doctor Two</option>
-                        <option value="Doctor-three">Doctor Three</option>
-                        <option value="Doctor-four">Doctor Four</option>
-                        <option value="Doctor-six">Doctor Five</option>
-                      </select>
-                    </div>
-                    <div className="col-12 mb-30">
-                      <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Your Message"></textarea>
-                    </div>
-                    <div className="col-12">
-                      <button type="submit" className="ta-button-01">
-                        Book Appointment
-                        <span className="button__icon-wrapper">
-                          <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg" width="10">
-                            <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
-                          </svg>
-                          <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" className="button__icon-svg button__icon-svg--copy">
-                            <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
-                          </svg>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </form>
+                <div data-aos="fade-up" data-aos-duration="400">
+                  <AppointmentForm className="contact-page-one" />
+                </div>
               </div>
               <div className="col-xl-6">
                 <div className="ta-appointment-img" data-aos="fade-up" data-aos-duration="600">

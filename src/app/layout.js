@@ -10,8 +10,9 @@ import Script from "next/script";
 import TemplateInitializer from "@/components/TemplateInitializer";
 
 export const metadata = {
-  title: "Cardia - Cardiologist and Medical Clinic",
-  description: "Cardia - Cardiologist and Medical Clinic React Template",
+  title: "Medford Multi-Speciality Hospital Mumbra Thane - 24/7 Premium Medical Care",
+  description: "Medford Multi-Speciality Hospital in Mumbra, Thane offers 24/7 premium, affordable medical care. Expert doctors, advanced ICCU, emergency trauma unit, diagnostics & pharmacy services.",
+  keywords: "Medford Hospital Mumbra, Medford Multi Speciality Hospital, Hospital in Mumbra, Thane, emergency care, ICCU Mumbra, affordable hospital, doctor consultation",
 };
 
 export default function RootLayout({ children }) {

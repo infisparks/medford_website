@@ -108,24 +108,16 @@ function DoctorCard({ doctor, delay }) {
 }
 
 export default function DoctorsPage() {
-  const [activeTab, setActiveTab] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
   // Filtering Logic
   const filteredDoctors = allDoctors.filter((doc) => {
-    const matchesSearch =
+    return (
       doc.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       doc.qualification.toLowerCase().includes(searchQuery.toLowerCase()) ||
       doc.department.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      doc.departmentHi.toLowerCase().includes(searchQuery.toLowerCase());
-
-    if (activeTab === "all") {
-      return matchesSearch;
-    }
-
-    // Slug matching helper
-    const targetDeptId = departments.find(d => d.id === activeTab)?.name.toLowerCase();
-    return doc.department.toLowerCase() === targetDeptId && matchesSearch;
+      doc.departmentHi.toLowerCase().includes(searchQuery.toLowerCase())
+    );
   });
 
   // Sort: Push doctors with noprofile.png to the bottom
@@ -151,23 +143,25 @@ export default function DoctorsPage() {
           {/* Unified Dynamic Filters Bar */}
           <div className="filters-container mb-50" data-aos="fade-up" data-aos-duration="300">
 
-            {/* Scrollable Department Tabs */}
-            <div className="dept-tabs-wrapper">
-              <div className="dept-tabs-scroll">
-                {departments.map((tab) => (
-                  <button
-                    key={tab.id}
-                    className={`dept-tab-pill-btn ${activeTab === tab.id ? "active" : ""}`}
-                    onClick={() => setActiveTab(tab.id)}
-                  >
-                    <i className={`${tab.icon} tab-btn-icon`}></i>
-                    <div className="tab-btn-text">
-                      <span className="tab-btn-en">{tab.name}</span>
-                      <span className="tab-btn-hi">{tab.nameHi}</span>
-                    </div>
-                  </button>
-                ))}
-              </div>
+            {/* Centered Responsive Search Bar */}
+            <div className="search-box-wrap mb-50" data-aos="fade-up" data-aos-duration="300" style={{ maxWidth: "600px", margin: "0 auto" }}>
+              <input
+                type="text"
+                className="search-input-field"
+                placeholder="Search doctors by name, specialty, or qualification..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <i className="fa-solid fa-magnifying-glass search-field-icon"></i>
+              {searchQuery && (
+                <button
+                  className="clear-search-btn"
+                  onClick={() => setSearchQuery("")}
+                  aria-label="Clear search"
+                >
+                  <i className="fa-solid fa-xmark"></i>
+                </button>
+              )}
             </div>
           </div>
 
@@ -196,15 +190,15 @@ export default function DoctorsPage() {
                     </div>
                     <h3 className="empty-title">No Doctors Found</h3>
                     <p className="empty-subtitle">
-                      We couldn't find any doctor matching your criteria. Try choosing another department.
+                      We couldn't find any doctor matching your search. Try searching with a different name or specialty.
                     </p>
                     <button
                       className="reset-filters-btn"
                       onClick={() => {
-                        setActiveTab("all");
+                        setSearchQuery("");
                       }}
                     >
-                      Reset All Filters
+                      Clear Search
                     </button>
                   </div>
                 </div>

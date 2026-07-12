@@ -51,7 +51,7 @@ export default function Footer() {
               <h3 className="header-md foo-head">Quick Link</h3>
               <ul className="footer-links">
                 <li><Link href="/about">About us</Link></li>
-                <li><Link href="/team">Patients review</Link></li>
+                <li><Link href="/directors">Board of Directors</Link></li>
                 <li><Link href="/team">Our Doctors</Link></li>
                 <li><Link href="/service">Our services</Link></li>
               </ul>

@@ -22,10 +22,9 @@ export default function Header() {
                 </span>
               </div>
               <div className="ta-socials">
-                <a href="#" aria-label="Twitter/X"><i className="fa-brands fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/medford.hospital/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
                 <a href="https://in.linkedin.com/company/medford-multi-specialty-hospital" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
               </div>
             </div>
           </div>
@@ -55,6 +54,9 @@ export default function Header() {
                 </li>
                 <li>
                   <Link href="/team">Doctors</Link>
+                </li>
+                <li>
+                  <Link href="/timetable">Timetable</Link>
                 </li>
                 <li>
                   <Link href="/appointment">Appointment</Link>
@@ -181,10 +183,9 @@ export default function Header() {
             </div>
             <ul className="social-icon">
               <li>Follow Us</li>
-              <li><a href="#"><i className="fa-brands fa-facebook-f"></i></a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a></li>
+              <li><a href="https://www.instagram.com/medford.hospital/?hl=en" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a></li>
               <li><a href="https://in.linkedin.com/company/medford-multi-specialty-hospital" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin-in"></i></a></li>
-              <li><a href="#"><i className="fa-brands fa-instagram"></i></a></li>
-              <li><a href="#"><i className="fa-brands fa-twitter"></i></a></li>
             </ul>
           </div>
         </div>
@@ -213,6 +214,12 @@ export default function Header() {
             <li>
               <div className="mob-row">
                 <Link href="/team">Doctors</Link>
+              </div>
+            </li>
+
+            <li>
+              <div className="mob-row">
+                <Link href="/timetable">Timetable</Link>
               </div>
             </li>
 

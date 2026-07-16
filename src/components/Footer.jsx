@@ -94,10 +94,9 @@ export default function Footer() {
             <div className="col-lg-6 col-xl-4">
               <ul className="social-icon">
                 <li>Follow Us</li>
-                <li><a href="#"><i className="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="https://www.instagram.com/medford.hospital/?hl=en" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a></li>
                 <li><a href="https://in.linkedin.com/company/medford-multi-specialty-hospital" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin-in"></i></a></li>
-                <li><a href="#"><i className="fa-brands fa-instagram"></i></a></li>
-                <li><a href="#"><i className="fa-brands fa-twitter"></i></a></li>
               </ul>
             </div>
             <div className="col-lg-12 col-xl-4">
